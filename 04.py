@@ -16,3 +16,11 @@ def get_upcoming_birthdays(users: list[dict]) -> list[dict]:
             user['congratulation_date'] = user_date.strftime("%Y.%m.%d")
             user.pop('birthday')
     return [user for user in users if 'congratulation_date' in user]
+
+
+users = [
+    {"name": "John Doe", "birthday": "1985.01.23"},
+    {"name": "Jane Smith", "birthday": "1990.01.27"}
+]
+upcoming_birthdays = get_upcoming_birthdays(users)
+print("Список привітань на цьому тижні:", upcoming_birthdays)
